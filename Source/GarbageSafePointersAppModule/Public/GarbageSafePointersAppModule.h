@@ -24,5 +24,6 @@ private:
 	TSharedRef<class SDockTab> OnSpawnMainTab(const class FSpawnTabArgs& SpawnTabArgs);
 
 private:
+	
 	TSharedPtr<class FUICommandList> AppCommands;
 };

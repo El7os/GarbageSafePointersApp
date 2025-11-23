@@ -38,7 +38,7 @@ int RunGarbageSafePointersApp( const TCHAR* CommandLine )
 	FSlateApplication::InitHighDPI(true);
 
 	// set the application name
-	FGlobalTabmanager::Get()->SetApplicationTitle(LOCTEXT("AppTitle", "GarbageSafePointersApp"));
+	FGlobalTabmanager::Get()->SetApplicationTitle(LOCTEXT("AppTitle", "Garbage Safe Pointers"));
 	FAppStyle::SetAppStyleSetName(FStarshipCoreStyle::GetCoreStyle().GetStyleSetName());
 
 	// launch the main window of the GarbageSafePointersApp module

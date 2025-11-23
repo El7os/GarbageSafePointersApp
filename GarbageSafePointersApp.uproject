@@ -8,5 +8,6 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}
-	]
+	],
+	"EngineAssociation": "{697332DC-421C-010D-5732-61AA35514B5E}"
 }

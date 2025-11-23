@@ -3,6 +3,7 @@
 #include "GarbageSafePointersAppModule/Public/GarbageSafePointersAppModule.h"
 #include "GarbageSafePointersAppModule/Public/GarbageSafePointersAppModuleStyle.h"
 #include "GarbageSafePointersAppModule/Public/GarbageSafePointersAppModuleCommands.h"
+#include "GarbageSafePointersAppModule/Public/Core/Testing.h"
 
 #include "Widgets/Docking/SDockTab.h"
 #include "Widgets/Layout/SBox.h"
@@ -29,7 +30,7 @@ void FGarbageSafePointersAppModule::StartupModule()
 		FCanExecuteAction());
 		
 	FGlobalTabmanager::Get()->RegisterNomadTabSpawner(GarbageSafePointersAppModuleTabName, FOnSpawnTab::CreateRaw(this, &FGarbageSafePointersAppModule::OnSpawnMainTab))
-		.SetDisplayName(LOCTEXT("FGarbageSafePointersAppModuleTabTitle", "GarbageSafePointersAppModule"))
+		.SetDisplayName(LOCTEXT("FGarbageSafePointersAppModuleTabTitle", "Garbage Safe Pointers"))
 		.SetMenuType(ETabSpawnerMenuType::Hidden);
 }
 
@@ -53,6 +54,8 @@ TSharedRef<SDockTab> FGarbageSafePointersAppModule::OnSpawnMainTab(const FSpawnT
 		FText::FromString(TEXT("GarbageSafePointersAppModule.cpp"))
 		);
 
+	const auto& Result = ConstructTestResult_General();
+					
 	return SNew(SDockTab)
 		.TabRole(ETabRole::NomadTab)
 		[
